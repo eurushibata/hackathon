@@ -1,0 +1,38 @@
+{
+    "version": "0.1",
+    "name": "SmartCitizens",
+    "description": "Your new awesome Open Web App",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/images/logo16.png",
+        "32": "/images/logo32.png",
+        "48": "/images/logo48.png",
+        "60": "/images/logo60.png",
+        "64": "/images/logo64.png",
+        "90": "/images/logo90.png",
+        "120": "/images/logo120.png",
+        "128": "/images/logo128.png"
+    },
+    "developer": {
+        "name": "Emerson Urushibata",
+        "url": "http://github.com/eurushibata"
+    },
+    "installs_allowed_from": [
+        "*"
+    ],
+    "locales": {
+        "pt_BR": {
+            "name": "SmartCitizens",
+            "description": "descrição aqui"
+        }
+    },
+    "default_locale": "pt_BR",
+    "permissions": {
+        "desktop-notification": {
+            "description": "To show notifications"
+        },
+        "geolocation": {
+            "description": "Marking out user location"
+        }
+    }
+}
