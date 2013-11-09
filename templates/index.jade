@@ -1,0 +1,61 @@
+doctype 5
+html(lang='en')
+	head
+		title= 'app'
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'])
+
+		script(type='text/javascript', src='https://code.jquery.com/jquery.js')
+		script(type='text/javascript', src='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js')
+		script(type='text/javascript', src='http://j.maxmind.com/app/geoip.js')
+		script(type='text/javascript', src="{{ url_for('static', filename='js/bootstrap.min.js') }}")
+		script(type='text/javascript', src="{{ url_for('static', filename='js/docs.js') }}")
+
+
+
+		link(href="{{ url_for('static', filename='css/bootstrap.min.css') }}", rel='stylesheet', media='screen')
+		link(href='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css', rel='stylesheet', media='screen')
+		link(href="{{ url_for('static', filename='css/docs.css') }}", rel='stylesheet', media='screen')
+		link(href="{{ url_for('static', filename='css/bundle.css') }}", rel='stylesheet', media='screen')
+	body
+		//- header
+		header(class=['navbar', 'navbar-inverse', 'navbar-fixed-top', 'bs-docs-nav'], header='navigation')
+			.container
+				.navbar-header
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.bs-navbar-collapse')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href='.') app
+					//- menu
+				nav(class=['collapse', 'navbar-collapse', 'bs-navbar-collapse'], role='navegation')
+					ul(class=['nav', 'navbar-nav'])
+						li.active
+							a(href='#') blablabla
+						li
+							a(href='#') teste
+						li
+							a(href='#') teste
+						li
+							a(href='#') teste
+		//- content
+		//- .highlight
+		#map
+
+		//- footer
+		//- footer.bs-footer(role='contentinfo')
+		//- 	.container
+		//- 		ul.footer-links
+		//- 			li Filaanda v0.0.1
+		//- 			li.muted ·
+		//- 			li
+		//- 				a(href='#') Termos de Uso
+		//- 			li.muted ·
+		//- 			li
+		//- 				a(href='#') Privacidade
+		//- 			li.muted ·
+		//- 			li
+		//- 				a(href='#') Trabalhe Conosco
+		//- 			li.muted ·
+		//- 			li
+		//- 				a(href='#') Ajuda

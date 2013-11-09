@@ -1,0 +1,11 @@
+body {
+    padding: 20 !important;
+    margin: 0 !important;
+}
+html, body, #map {
+    height: 100% !important;
+}
+
+.leaflet-control-attribution {
+	display: none !important;
+}
