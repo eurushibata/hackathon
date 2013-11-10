@@ -1,0 +1,19 @@
+{
+  "name": "Capture JSON",
+  "description": "Capture json data",
+  "launch_path": "/index.html",
+    "type": "privileged",
+  "permissions": {
+    "systemXHR": {
+      "description": "Test Connection"
+     }
+  },
+   "icons": {
+    "128": "http:/www.sueselbeck.com/blog/examples/1/icon-128.png"
+  },
+  "developer": {
+    "name": "Renan Vicente Gomes da Silva",
+    "url": "http://linuxextreme.org"
+  },
+  "default_locale": "en"
+}

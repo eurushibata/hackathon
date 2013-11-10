@@ -1,0 +1,32 @@
+<html>
+  <head>  
+      <title>Hello World!</title>  
+  </head>
+  <body>
+      Hello World!    
+  </body>
+  <script>
+      var manifest_url = "http:/www.sueselbeck.com/blog/example/1/manifest.webapp";
+  </script>
+  <script>
+        var xhr = new XMLHttpRequest({ mozSystem: true });
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.open("GET","http://127.0.0.1:8081/getallitems.json");
+        xhr.responseType="json";
+        xhr.send();
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                console.log(this.response);
+                alert(xhr.responseText);
+            }
+        };
+        xhr.onerror = function() {
+            console.log(this.response);
+            console.log("Erro!");
+        }
+    </script>
+  <input type="button" id="button" value="Install!" onclick="navigator.mozApps.install(manifest_url); return false;">
+  </body>
+
+</html>
+
