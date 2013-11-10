@@ -1,47 +1,21 @@
 #!/usr/bin/env python
 
-import socket
-import sys
-from thread import *
-import json
+from bottle import route, run, template, get, debug
 
-HOST = ''
-PORT = 8888
+debug(True)
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-print 'Socket created'
+# this will be the dictionary returned by the ajax call.
+# Bottle convert this in a json compatibile string.
 
-try:
-    s.bind((HOST, PORT))
-except socket.error , msg:
-    print 'Bind failed. Error code: ' + str(msg[0]) + ' Message ' + msg[1]
-    sys.exit()
+items = {1: 'first item', 2: 'second item'}
 
-print 'Socket bind complete'
+# a simple json test main page
+@route('/')
+def jsontest():
+        return template('json')
 
+@route('/getallitems.json')
+def shop_aj_getallitems():
+        return (items)
 
-s.listen(10)
-print 'Socket now listening'
-
-# Function for handling connections. This will be used to create threads
-def clientthread(conn):
-    # Sending message to connected client
-    while True:
-        try:
-            data = {'message':'hello world!','test':123.4}
-            conn.send(json.dumps(data))
-            conn.close()
-        except:
-            conn.close()
-
-
-
-# now keep talking with the client
-while 1:
-    # wait to accept a connection - blocking call
-    conn , addr = s.accept()
-    # display client information
-    print 'Connected with ' + addr[0] +':' + str(addr[1])
-    # start new thread takes 1st argument as a function name to be run , second is the tuple of arguments to the function.
-    start_new_thread(clientthread , (conn,))
-s.close()
+run(host='127.0.0.1', port=8081)
