@@ -2,7 +2,7 @@
   "name": "Capture JSON",
   "description": "Capture json data",
   "launch_path": "/index.html",
-    "type": "privileged",
+   "type": "privileged",
   "permissions": {
     "systemXHR": {
       "description": "Test Connection"

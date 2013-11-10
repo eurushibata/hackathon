@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from bottle import route, run, template, get, debug
+from bottle import response
 from backend.get_data import get_data
 
 debug(True)
@@ -27,6 +28,8 @@ def get_cartorios(bairro):
     
 @route('/search/dados_gerais_bairro/<bairro>')
 def get_dados_gerais_bairro(bairro):
+        response.content_type = 'application/json'
+        response.add_header('Access-Control-Allow-Origin', '*')
         bairro = bairro.replace('%20',' ')
         print bairro
         return (get_data('dados_gerais_bairro', bairro.upper()))
