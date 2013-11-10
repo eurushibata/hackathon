@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/base.css"/>
-        <link href="(your styles folder)/style_unstable/progress_activity.css" rel="stylesheet" type="text/css">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link href="css/homescreen.css" rel="stylesheet" type="text/css">
+    <link href="css/style_unstable/progress_activity.css" rel="stylesheet" type="text/css">
 
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 
-        
-        <link rel="resource" type="">
-        <title>SmartCitizens</title>
-    </head>
+  <title>SmartCity</title>
+  <script>
+    $("document").ready(function() {
+        var interval = setInterval(function() {loading()}, 13);
 
-    <body>
-        <section role="region">
-        <header>
-            <progress value="80" max="100" class="pack-activity"></progress>
-            <!-- Icon that will indicate whether you are online or offline - enabled if you are using offline/appcache (see above) -->
-            <div id="online-status" title="Online"></div>
-            <menu type="toolbar">
-                <button id="install"><span class="icon icon-add">add</span></button>
-            </menu>
-            <h1 data-l10n-id="app-heading">
-                blabalbalbal
-            </h1>
-        </header>
-    </section>
-    </body>
-<html>
+        function loading() {
+        if($(".pack-activity").val() == "100"){
+            window.location.href = "app.html";
+        } else {
+            $(".pack-activity").attr("value", $(".pack-activity").val()+1);
+        }
+    }
+    });
+    
+
+    
+  </script>
+  <link >
+</head>
+<body>
+    <div class="homescreen"></div>
+    <progress value="0" max="100" class="pack-activity"></progress>
+</body>
+</html>
