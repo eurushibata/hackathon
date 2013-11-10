@@ -92,6 +92,11 @@ $(document).ready(function() {
 
 
 
+	$("input#search-input").keyup(function(e) {
+		alert('ass');
+	});
+
+
 
 });
 		
