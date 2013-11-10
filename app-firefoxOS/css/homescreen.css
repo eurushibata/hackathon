@@ -1,0 +1,20 @@
+body {
+	background-color: #C5C5C5;
+}
+
+div.homescreen {
+	height: 128px;
+	width: 128px;
+    position:absolute;
+	background: url(../img/homescreen.png) no-repeat left top;
+	top:50%;
+    margin:-64px 0 0 -64px;
+    left: 50%;
+}
+
+progress.pack-activity {
+	position: absolute;
+	bottom: 0;
+	left:-1px;
+	border-radius: 0 !important;
+}
