@@ -58,63 +58,93 @@
 
 		<title>SmartCity</title>
 		<script>
-						// JavaScript para página sobre
+			// JavaScript para página sobre
 			var sobreDialog;
 			var escolasDialog;
+			var bairroDialog;
 			function requestDeleteConfirmation() {
 
-			$('#drawer').click();
-			sobreDialog.classList.remove("hidden");
+				$('#drawer').click();
+				sobreDialog.classList.remove("hidden");
 			}
 
 			function closeSobreDialog() {
-			sobreDialog.classList.add("hidden");
+				sobreDialog.classList.add("hidden");
 			}
 
 			function requestEscola() {
 
-			$('#drawer').click();
-			escolasDialog.classList.remove("hidden");
+				$('#drawer').click();
+				escolasDialog.classList.remove("hidden");
 			}
 
 			function closeEscolaDialog() {
-			escolasDialog.classList.add("hidden");
+				escolasDialog.classList.add("hidden");
 			}
 
-			window.onload = function () {
-			// elements that we're going to reuse in the code
-			sobreDialog = document.getElementById("sobre-page");
-			escolasDialog = document.getElementById("escola-page");
+			function requestBairro() {
 
-			// All the listeners for the interface buttons and for the input changes
+				$('#drawer').click();
+				bairroDialog.classList.remove("hidden");
+			}
 
-			document.getElementById("sobre").addEventListener("click", requestDeleteConfirmation);
-			document.getElementById("close-sobre").addEventListener("click", closeSobreDialog);
+			function closeBairroDialog() {
+				bairroDialog.classList.add("hidden");
+			}
 
-			document.getElementById("escola-btn").addEventListener("click", requestEscola);
-			document.getElementById("close-escola").addEventListener("click", closeEscolaDialog);
+
+			window.onload = function() {
+				// elements that we're going to reuse in the code
+				sobreDialog = document.getElementById("sobre-page");
+				escolasDialog = document.getElementById("escola-page");
+				bairroDialog = document.getElementById("bairro-page");
+
+				// All the listeners for the interface buttons and for the input changes
+
+				document.getElementById("sobre").addEventListener("click", requestDeleteConfirmation);
+				document.getElementById("close-sobre").addEventListener("click", closeSobreDialog);
+
+				document.getElementById("escola-btn").addEventListener("click", requestEscola);
+				document.getElementById("close-escola").addEventListener("click", closeEscolaDialog);
+
+				document.getElementById("bairro-btn").addEventListener("click", requestBairro);
+				document.getElementById("close-bairro").addEventListener("click", closeBairroDialog);
 
 			};
 		</script>
-		
-		<script>
-			var xhr = new XMLHttpRequest({mozSystem: true});
+
+			<script>
+			var xhr = new XMLHttpRequest({
+				mozSystem : true
+			});
+			
+			var bairro = http://cep.correiocontrol.com.br/02245010.json
+			
 			xhr.open('GET', 'http://192.168.0.159:8081/search/dados_gerais_bairro/bela%20vista');
 			xhr.overrideMimeType('application/json');
-			xhr.responseType="json";
+			xhr.responseType = "json";
 			xhr.send();
 			xhr.onreadystatechange = function() {
 				if (xhr.status == 200) {
 					console.log(this.response[0].bairro);
+					$('#bairro-list').text('');
+					$('#bairro-list').append('<ul>');
+					$('#bairro-list').append('<li>Bairro: ' + this.response[0].bairro + ' (' + this.response[0].municipio + ')</li>');
+					$('#bairro-list').append('<li>Area Total: ' + this.response[0].area_total + 'km</li>');
+					$('#bairro-list').append('<li>Domicilios: ' + this.response[0].num_familias + '</li>');
+					$('#bairro-list').append('<li>Populacao: ' + this.response[0].populacao + ' (' + this.response[0].num_familias + ' familias)</li>');
+					$('#bairro-list').append('<li>Matriculas escolares: ' + this.response[0].num_matriculas + '</li>');
+					$('#bairro-list').append('<li>Empregos: ' + this.response[0].num_empregos + '</li>'); 
+					
+					$('#bairro-list').append('</ul>');
 				}
 			};
-			
+
 			xhr.onerror = function() {
 				console.log('Erro!');
 			};
 		</script>
-		
-		
+
 	</head>
 
 	<body>
@@ -127,12 +157,13 @@
 			</header>
 			<nav>
 				<ul>
+					<li>
+						<a id='bairro-btn'>Bairro</a>
+					</li>
 					<li id='escola-btn'>
 						<a>Escolas</a>
 					</li>
-					<li>
-						<a href="#content">label</a>
-					</li>
+
 					<li>
 						<a href="#content">label</a>
 					</li>
@@ -232,53 +263,67 @@
 							<td class="sprite7 border-last"><div class="icon-info7"></div></td>
 							<td class="sprite8"><div class="icon-info8"></div></td>
 						</tr>
-						<td colspan="2" class="sprite9"><div class="icon-info9"></td>
-			</div>
+						<td colspan="2" class="sprite9"><div class="icon-info9"></div></td>
+					</table>
 
-			</table>
-		</section>
+				</section>
 
-		<!-- Escolas Perfis -->
-		<form id="escola-page" role="dialog" data-type="confirm" class="hidden">
-			<section>
-				<h1>Escola</h1>
-				<p>
-					lorem ipsum.....
-				</p>
-			</section>
-			<menu>
-				<button id="close-escola">
-					Back
-				</button>
-			</menu>
-		</form>
+				<!-- Bairro Dado Geral -->
+				<form id="bairro-page" role="dialog" data-type="confirm" class="hidden">
+					<section>
+						<h1>Bairro</h1>
+						<p id='bairro-list'>
+							lorem ipsum.....
+						</p>
+					</section>
+					<menu>
+						<button id="close-bairro">
+							Back
+						</button>
+					</menu>
+				</form>
 
-		<section role="region" id="tipos-servico">
-			<div class="tipos-header">
-				<div class="click-back"></div>
-			</div>
+				<!-- Escolas Perfis -->
+				<form id="escola-page" role="dialog" data-type="confirm" class="hidden">
+					<section>
+						<h1>Escola</h1>
+						<p id='escola-list'>
+							lorem ipsum.....
+						</p>
+					</section>
+					<menu>
+						<button id="close-escola">
+							Back
+						</button>
+					</menu>
+				</form>
 
-			<h1>Tipos de Serviço</h1>
+				<section role="region" id="tipos-servico">
+					<div class="tipos-header">
+						<div class="click-back"></div>
+					</div>
 
-			<div class="todas-notas">
-				<div class="nota1 space"></div>
-				<div class="nota2 space"></div>
-				<div class="nota3 space"></div>
-				<div class="nota4 space"></div>
-				<div class="nota5 space"></div>
-			</div>
+					<h1>Tipos de Serviço</h1>
 
-			<table>
-				<tr>
-					<td><h3>Atendimento Especializado</h3></td>
-					<td class="checked"></td>
-					<td class="checked"></td>
-					<td class="checked"></td>
-					<td class="checked"></td>
-					<td class="checked"></td>
-				</tr>
-			</table>
-		</section>
+					<div class="todas-notas">
+						<div class="nota1 space"></div>
+						<div class="nota2 space"></div>
+						<div class="nota3 space"></div>
+						<div class="nota4 space"></div>
+						<div class="nota5 space"></div>
+					</div>
+
+					<table>
+						<tr>
+							<td><h3>Atendimento Especializado</h3></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+						</tr>
+					</table>
+				</section>
 
 	</body>
 <html>
