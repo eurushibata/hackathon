@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
+        <meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <!--         <link rel="stylesheet" type="text/css" href="css/base.css"/>
         <link href="css/style/headers.css" rel="stylesheet" type="text/css">
         <link href="css/style_unstable/drawer.css" rel="stylesheet" type="text/css"> -->
@@ -44,9 +44,18 @@
   <link rel="stylesheet" href="cross_browser.css">
 
 
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+   <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+   <script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
 
-        <link rel="resource" type="">
-        <title>SmartCity</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+
+      <!-- mapas -->
+      <script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/ee/2.5.3/jsl.js?with=all"></script> 
+      <link rel="stylesheet" href="css/map.css">
+      <!-- fim mapa -->
+
+      <title>SmartCity</title>
     </head>
 
     <body>
@@ -73,18 +82,24 @@
 </section>
 <section id="drawer" role="region">
   <header>
-    <a href="#content"><span class="icon icon-menu">hide sidebar</span></a>
-    <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+    <a href="#content"><span class="icon icon-edit">hide sidebar</span></a>
+    <a href="#drawer"><span class="icon icon-edit">show sidebar</span></a>
     <menu type="toolbar">
-      <button><span class="icon icon-user">user</span></button>
+      <button><span class="icon icon-menu">infográficos</span></button>
     </menu>
-    <form action="#">
-      <input type="text" placeholder="Digite seu endereço..." required="required">
+    <form id="search-form" action="#">
+      <input id="address" type="text" placeholder="..." required="required">
       <button type="reset">Remove text</button>
     </form>
   </header>
   <div role="main">
-<div role="toolbar">
+
+
+    <script src="js/map.js" type="text/javascript" charset="utf-8"></script>
+
+  <div id="map"></div>
+    
+<!-- <div role="toolbar">
   <ul>
     <li><button class="action-icon delete">delete</button></li>
   </ul>
@@ -99,7 +114,7 @@
 </section>
 
 
-
+     -->
 
 
 
