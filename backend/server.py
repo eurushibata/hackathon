@@ -49,5 +49,9 @@ def get_sistema_viario(bairro):
         bairro = bairro.replace('%20',' ')
         return (get_data('sistema_viario', bairro.upper()))
     
+@route('/search/qedu/<escola>')
+def get_qedu(escola):
+    return (get_data('qedu', escola))   
+
     
 run(host='0.0.0.0', port=8081)

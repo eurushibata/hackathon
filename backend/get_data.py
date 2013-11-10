@@ -12,6 +12,8 @@ def connect():
 def get_data(table, value):
     if table == 'dados_gerais_bairro':
         return get_dados_gerais_bairro(value)
+    elif table == 'qedu':
+        return get_qedu(value)
     
 def get_dados_gerais_bairro(bairro):
     try:
@@ -108,5 +110,33 @@ def get_sistema_viario(bairro):
     finally:
         if cursor:
             cursor.close()
+            
+            
+            
+def get_qedu(escola):
+    import mechanize
+    import cookielib
+    
+    # Browser
+    br = mechanize.Browser()
+    
+    br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.114 Safari/537.36')]
+    br.addheaders = [('X-Requested-With', 'XMLHttpRequest')]
+    br.addheaders = [('Accept', 'application/json, text/javascript, */*; q=0.01')]
+    
+    # Cookie Jar
+    cj = cookielib.LWPCookieJar()
+    br.set_cookiejar(cj)
+
+    # Follows refresh 0 but not hangs on refresh > 0
+    br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+    
+    br.open('http://www.qedu.org.br/')
+    br.addheaders = [('Referer', 'http://www.qedu.org.br/')]
+    br.open('http://www.qedu.org.br/api/search/?text=' + escola)
+    
+
+    return(br.response().read())
+
 
 get_data('dados_gerais_bairro', 'PARADA INGLESA')
