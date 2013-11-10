@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from bottle import route, run, template, get, debug
+from backend.get_data import get_data
 
 debug(True)
 
@@ -14,8 +15,8 @@ items = {1: 'first item', 2: 'second item'}
 def jsontest():
         return template('json')
 
-@route('/getallitems.json')
-def shop_aj_getallitems():
-        return (items)
+@route('/vw_dado_geral')
+def get_vw_dado_geral():
+        return (get_data('VW_DADO_GERAL', 'PARADA INGLESA'))
 
 run(host='127.0.0.1', port=8081)
