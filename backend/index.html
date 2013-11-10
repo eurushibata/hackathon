@@ -5,19 +5,20 @@
   <body>
   <script>
       function parseJsoan(data) {
-        
+      	
       }
         var xhr = new XMLHttpRequest({ mozSystem: true });
-        xhr.open("GET","http://127.0.0.1:8081/search/dados_gerais_bairro/bela%20vista");
+        xhr.open("GET","http://127.0.0.1:8081/search/dados_gerais_bairro/bela%20vista", true);
         xhr.overrideMimeType('text/plain; charset=utf-8');
         xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.responseType="json";
-        xhr.send();
-        xhr.onload = function() {
+        xhr.responseType="text/html";
+        xhr.send(null);
+        xhr.onreadystatechange = callbackFunction;
+        
+        function callbackFunction() {
             if (xhr.status == 200) {
-                console.log(JSON.parse(this.response));
-                obj = this.response;
-                alert(obj);
+            	console.log(xhr.responseText);
+            	alert(xhr.responseText);
             }
         };
         xhr.onerror = function() {
