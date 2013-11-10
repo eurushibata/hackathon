@@ -1,0 +1,111 @@
+#tela-info{
+	background-color: #78C0A8;
+}
+.info-container{
+	height: 100%;
+	padding: 10px 20px;
+	width: 100%;
+	border-spacing: 0;
+}
+
+.border-par{
+	border-bottom: 1px solid white;
+}
+.border-impar{
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.border-last{
+	border-right: 1px solid white;
+}
+
+
+.sprite1{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info1{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: 0 0; width: 81px; height: 55px;
+	}
+
+.sprite2{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info2{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -1290px 0; width: 74px; height: 65px;
+	}
+
+.sprite3{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info3{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -1935px 0; width: 53px; height: 69px;
+	}
+
+.sprite4{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info4{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -2580px 0; width: 66px; height: 66px;
+	}
+
+.sprite5{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info5{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -3225px 0; width: 60px; height: 63px;
+	}
+
+.sprite6{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info6{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -3870px 0; width: 80px; height: 50px;
+	}
+
+.sprite7{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info7{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -4515px 0; width: 58px; height: 68px;
+	}
+
+.sprite8{
+	width: 50%;
+	height: 22%;
+}
+	.icon-info8{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -5160px 0; width: 58px; height: 14px;
+	}
+
+.sprite9{
+	height: 50px;
+}
+	.icon-info9{
+		margin: auto;
+		background: url(../img/sprites/tela-info-sprites.png) no-repeat top left;
+		background-position: -5813px -13px; width: 36px; height: 14px;
+	}

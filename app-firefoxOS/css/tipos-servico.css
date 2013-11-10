@@ -1,0 +1,63 @@
+#tipos-servico{
+	background-color: #78C0A8;
+}
+
+.tipos-header{
+	background-image: url(../img/tiposservicos-header.png);
+	background-repeat: no-repeat;
+	background-size: 321px 60px;
+	height: 60px;
+	position: relative;
+}
+
+.click-back{
+	height: 60px;
+	width: 40px;
+}
+
+h1{
+	text-align: center;
+	text-transform: uppercase;
+	color: #FBEAB5;
+	font-size: 25px;
+}
+
+.todas-notas{
+	width: 100%;
+	text-align: right;
+	margin-top: 30px;
+}
+	.space{
+		margin-right: 5px;
+	}
+
+	.nota1{
+		display: inline-block;		
+		background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat top left;
+		background-position: -645px 0; width: 20px; height: 27px;
+	}
+	.nota2{
+		display: inline-block;
+		background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat top left;
+		background-position: -1290px 0; width: 20px; height: 27px;
+	}
+	.nota3{
+		display: inline-block;
+		background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat top left;
+		background-position: -1935px 0; width: 20px; height: 27px;
+	}
+	.nota4{
+		display: inline-block;
+		background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat top left;
+		background-position: -2580px 0; width: 20px; height: 27px;
+	}
+	.nota5{
+		display: inline-block;
+		background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat top left;
+		background-position: -3225px 0; width: 20px; height: 27px;
+	}
+
+.checked{
+	background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat;
+	background-position: -4515px 0px 0; width: 20px; height: 27px;
+}

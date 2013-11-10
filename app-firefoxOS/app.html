@@ -1,107 +1,214 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-<!--         <link rel="stylesheet" type="text/css" href="css/base.css"/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- <link rel="stylesheet" type="text/css" href="css/base.css"/>
         <link href="css/style/headers.css" rel="stylesheet" type="text/css">
         <link href="css/style_unstable/drawer.css" rel="stylesheet" type="text/css"> -->
 
 
 
 
-<!-- Building blocks -->
-  <link rel="stylesheet" href="style/action_menu.css">
-  <link rel="stylesheet" href="style/buttons.css">
-  <link rel="stylesheet" href="style/confirm.css">
-  <link rel="stylesheet" href="style/edit_mode.css">
-  <link rel="stylesheet" href="style/headers.css">
-  <link rel="stylesheet" href="style/input_areas.css">
-  <link rel="stylesheet" href="style/status.css">
-  <link rel="stylesheet" href="style/switches.css">
-  <link rel="stylesheet" href="style_unstable/drawer.css">
-  <link rel="stylesheet" href="style_unstable/lists.css">
-  <link rel="stylesheet" href="style_unstable/progress_activity.css">
-  <link rel="stylesheet" href="style_unstable/scrolling.css">
-  <link rel="stylesheet" href="style_unstable/seekbars.css">
-  <link rel="stylesheet" href="style_unstable/tabs.css">
-  <link rel="stylesheet" href="style_unstable/toolbars.css">
+    <!-- Building blocks -->
+    <link rel="stylesheet" href="style/action_menu.css">
+    <link rel="stylesheet" href="style/buttons.css">
+    <link rel="stylesheet" href="style/confirm.css">  
+    <link rel="stylesheet" href="style/edit_mode.css">
+    <link rel="stylesheet" href="style/headers.css">
+    <link rel="stylesheet" href="style/input_areas.css">
+    <link rel="stylesheet" href="style/status.css">
+    <link rel="stylesheet" href="style/switches.css">
+    <link rel="stylesheet" href="style_unstable/drawer.css">
+    <link rel="stylesheet" href="style_unstable/lists.css">
+    <link rel="stylesheet" href="style_unstable/progress_activity.css">
+    <link rel="stylesheet" href="style_unstable/scrolling.css">
+    <link rel="stylesheet" href="style_unstable/seekbars.css">
+    <link rel="stylesheet" href="style_unstable/tabs.css">
+    <link rel="stylesheet" href="style_unstable/toolbars.css">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="icons/styles/action_icons.css">
-  <link rel="stylesheet" href="icons/styles/media_icons.css">
-  <link rel="stylesheet" href="icons/styles/comms_icons.css">
-  <link rel="stylesheet" href="icons/styles/settings_icons.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="icons/styles/action_icons.css">
+    <link rel="stylesheet" href="icons/styles/media_icons.css">
+    <link rel="stylesheet" href="icons/styles/comms_icons.css">
+    <link rel="stylesheet" href="icons/styles/settings_icons.css">
 
-  <!-- Transitions -->
-  <link rel="stylesheet" href="transitions.css">
-  
-  <!-- Util CSS: some extra tricks -->
-  <link rel="stylesheet" href="util.css">
-  <link rel="stylesheet" href="fonts.css">
+    <!-- Transitions -->
+    <link rel="stylesheet" href="transitions.css">
+    
+    <!-- Util CSS: some extra tricks -->
+    <link rel="stylesheet" href="util.css">
+    <link rel="stylesheet" href="fonts.css">
 
-  <!-- Additional markup to make Building Blocks kind of cross browser -->
-  <link rel="stylesheet" href="cross_browser.css">
+    <!-- Additional markup to make Building Blocks kind of cross browser -->
+    <link rel="stylesheet" href="cross_browser.css">
 
+    <!-- Tela-Info CSS -->
+    <link rel="stylesheet" href="css/tela-info.css">
+    <link rel="stylesheet" href="css/escola-list.css">
+    <link rel="stylesheet" href="css/tipos-servico.css">
 
+    <link rel="resource" type="">
+    <title>SmartCity</title>
+    
+    <script>
+      // JavaScript para página sobre
+      var sobreDialog;
+      function requestDeleteConfirmation() {
+          sobreDialog.classList.remove("hidden");
+      }
 
-        <link rel="resource" type="">
-        <title>SmartCity</title>
-    </head>
+      function closeSobreDialog() {
+          sobreDialog.classList.add("hidden");
+      }
 
-    <body>
-<section data-type="sidebar">
-  <header>
-    <menu type="toolbar">
-      <a href="#content"><span>Done</span></a>
-    </menu>
-    <h1>Menu</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#content">label</a></li>
-      <li><a href="#content">label</a></li>
-      <li><a href="#content">label</a></li>
-      <li><a href="#content">label</a></li>
-    </ul>
-    <h2>Equipe</h2>
-    <ul>
-      <li><a href="#content">Ajuda</a></li>
-      <li><a href="#content">Sobre</a></li>
-    </ul>
-  </nav>
-</section>
-<section id="drawer" role="region">
-  <header>
-    <a href="#content"><span class="icon icon-menu">hide sidebar</span></a>
-    <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
-    <menu type="toolbar">
-      <button><span class="icon icon-user">user</span></button>
-    </menu>
-    <form action="#">
-      <input type="text" placeholder="Digite seu endereço..." required="required">
-      <button type="reset">Remove text</button>
+      window.onload = function () {
+          // elements that we're going to reuse in the code
+          sobreDialog = document.getElementById("sobre-page");
+
+          // All the listeners for the interface buttons and for the input changes
+          
+          document.getElementById("sobre").addEventListener("click", requestDeleteConfirmation);
+          document.getElementById("close-sobre").addEventListener("click", closeSobreDialog);
+
+      };
+    </script>
+  </head>
+
+  <body>
+    <section data-type="sidebar">
+      <header>
+        <menu type="toolbar">
+          <a href="#content"><span>Done</span></a>
+        </menu>
+        <h1>Menu</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#content">label</a></li>
+          <li><a href="#content">label</a></li>
+          <li><a href="#content">label</a></li>
+          <li><a href="#content">label</a></li>
+        </ul>
+        <h2>Equipe</h2>
+        <ul>
+          <li><a href="#content">Ajuda</a></li>
+          <li id="sobre"><a>Sobre</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section id="drawer" role="region">
+      <header>
+        <a href="#content"><span class="icon icon-menu">hide sidebar</span></a>
+        <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+        <menu type="toolbar">
+          <button><span class="icon icon-user">user</span></button>
+        </menu>
+        <form action="#">
+          <input type="text" placeholder="Digite seu endereço..." required="required">
+          <button type="reset">Remove text</button>
+        </form>
+      </header>
+      <div role="main">
+        <div role="toolbar">
+          <ul>
+            <li><button class="action-icon delete">delete</button></li>
+          </ul>
+          <ul>
+            <li><button class="action-icon email-flag">Flag</button></li>
+            <li><button class="action-icon email-markread">Mark read</button></li>
+            <li><button class="action-icon move">Move</button></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tela da página Sobre -->
+    <form id="sobre-page" role="dialog" data-type="confirm" class="hidden">
+      <section>
+        <h1>Sobre</h1>
+        <p>lorem ipsum.....</p>
+      </section>
+      <menu>
+        <button id="close-sobre">Back</button>
+      </menu>
     </form>
-  </header>
-  <div role="main">
-<div role="toolbar">
-  <ul>
-    <li><button class="action-icon delete">delete</button></li>
-  </ul>
-  <ul>
-    <li><button class="action-icon email-flag">Flag</button></li>
-    <li><button class="action-icon email-markread">Mark read</button></li>
-    <li><button class="action-icon move">Move</button></li>
-  </ul>
-</div>
 
-  </div>
-</section>
+    <!-- Tela de Info que scrolla para baixo -->
+    <section role="region" id="tela-info" class="hidden">
+      <table class="info-container">
+        <tr>
+          <td class="sprite1 border-impar"><div class="icon-info1"></div></td>
+          <td class="sprite2 border-par"><div class="icon-info2"></div></td>
+        </tr>
+        <tr>
+          <td class="sprite3 border-impar"><div class="icon-info3"></div></td>
+          <td class="sprite4 border-par"><div class="icon-info4"></div></td>
+        </tr>
+        <tr>
+          <td class="sprite5 border-impar"><div class="icon-info5"></div></td>
+          <td class="sprite6 border-par"><div class="icon-info6"></div></td>
+        </tr>
+        <tr>
+          <td class="sprite7 border-last"><div class="icon-info7"></div></td>
+          <td class="sprite8"><div class="icon-info8"></div></td>
+        </tr>
+        <td colspan="2" class="sprite9"><div class="icon-info9"></td></div>
 
+      </table> 
+    </section>
 
+    <!-- Escolas Perfis -->
+    <section role="region" id="escola">
+        <div class="escola-header">
+          <div class="click"></div>
+        </div>
+        <h2 class="selecionadas"></h2>
 
+        <div class="escola-list">
+          <ul>
+            <li class="escola">
+              <div class="escola-perfil">
+                <h1>Nome</h1>
 
+                <div class="hold-persons">
+                  <div class="person-icon"></div>
+                  <div class="qtde-estudantes">300 Estudantes</div>
+                </div>
+              </div>
+              <div class="nota"></div>
+            </li>
+          </ul>
+        </div>
+    </section>
 
+    <section role="region" id="tipos-servico">
+      <div class="tipos-header">
+        <div class="click-back"></div>
+      </div>
 
-    </body>
+      <h1>Tipos de Serviço</h1>
+
+      <div class="todas-notas">
+        <div class="nota1 space"></div>
+        <div class="nota2 space"></div>
+        <div class="nota3 space"></div>
+        <div class="nota4 space"></div>
+        <div class="nota5 space"></div>
+      </div>
+
+      <table>
+        <tr>
+          <td><h3>Atendimento Especializado</h3></td>
+          <td class="checked"></td>
+          <td class="checked"></td>
+          <td class="checked"></td>
+          <td class="checked"></td>
+          <td class="checked"></td>
+        </tr>
+      </table>
+    </section>
+  </body>
 <html>

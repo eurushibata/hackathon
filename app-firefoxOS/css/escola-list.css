@@ -1,0 +1,53 @@
+#escola{
+	background-color: #78C0A8;
+}
+
+.header-img{
+	background-image: url(../img/estudante-header.png);
+	background-repeat: no-repeat;
+	background-size: 321px 90px;
+	height: 90px;
+	position: relative;
+}
+	.click{
+		width: 55px;
+		height: 90px;
+	}
+
+h2{
+	text-align: center;
+}
+
+.escola-list{
+	position: relative;
+	padding-left: 40px;
+}
+	.escola-perfil{
+		display: inline-block;
+	}
+		h1{
+			margin: 0;
+			color: #FBEAB5;
+			text-transform: uppercase;
+			font-size: 22px;
+		}
+
+			.person-icon{
+				background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat top left;
+				background-position: -3870px 0; width: 10px; height: 27px;
+				display: inline-block;
+			}
+			.qtde-estudantes{
+				display: inline-block;
+				vertical-align: top;
+				font-size: 18px;
+			}
+	.nota{
+		display: inline-block;
+		width: 10px;
+		height: 20px;
+		vertical-align: top;
+		background: url(../img/sprites/escolas-perfil-sprites.png) no-repeat top left;
+		background-position: -1935px 0; width: 20px; height: 27px;
+		display: inline-block;
+	}
