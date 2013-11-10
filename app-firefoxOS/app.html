@@ -44,8 +44,11 @@
   <link rel="stylesheet" href="cross_browser.css">
 
 
+<script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+   <script src="http://labs.easyblog.it/maps/leaflet-search/leaflet-search.js"></script>
+   <link rel="stylesheet" href="http://labs.easyblog.it/maps/leaflet-search/leaflet-search.css" />
    <script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
 
     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
@@ -89,6 +92,7 @@
     </menu>
     <form id="search-form" action="#">
       <input id="address" type="text" placeholder="..." required="required">
+      <div class="search-tooltip" style="display: none;"></div>
       <button type="reset">Remove text</button>
     </form>
   </header>
