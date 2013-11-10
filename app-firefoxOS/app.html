@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <!-- <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <head>
+        <meta charset="utf-8">
+        <meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<!--         <link rel="stylesheet" type="text/css" href="css/base.css"/>
         <link href="css/style/headers.css" rel="stylesheet" type="text/css">
         <link href="css/style_unstable/drawer.css" rel="stylesheet" type="text/css"> -->
 
@@ -48,10 +48,19 @@
     <link rel="stylesheet" href="css/escola-list.css">
     <link rel="stylesheet" href="css/tipos-servico.css">
 
-    <link rel="resource" type="">
-    <title>SmartCity</title>
-    
-    <script>
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+   <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+   <script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+
+      <!-- mapas -->
+      <script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/ee/2.5.3/jsl.js?with=all"></script> 
+      <link rel="stylesheet" href="css/map.css">
+      <!-- fim mapa -->
+
+      <title>SmartCity</title>
+		<script>
       // JavaScript para página sobre
       var sobreDialog;
       function requestDeleteConfirmation() {
@@ -73,59 +82,60 @@
 
       };
     </script>
-  </head>
+    </head>
 
-  <body>
-    <section data-type="sidebar">
-      <header>
-        <menu type="toolbar">
-          <a href="#content"><span>Done</span></a>
-        </menu>
-        <h1>Menu</h1>
-      </header>
-      <nav>
-        <ul>
-          <li><a href="#content">label</a></li>
-          <li><a href="#content">label</a></li>
-          <li><a href="#content">label</a></li>
-          <li><a href="#content">label</a></li>
-        </ul>
-        <h2>Equipe</h2>
-        <ul>
-          <li><a href="#content">Ajuda</a></li>
-          <li id="sobre"><a>Sobre</a></li>
-        </ul>
-      </nav>
-    </section>
+    <body>
+<section data-type="sidebar">
+  <header>
+    <menu type="toolbar">
+      <a href="#content"><span>Done</span></a>
+    </menu>
+    <h1>Menu</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#content">label</a></li>
+      <li><a href="#content">label</a></li>
+      <li><a href="#content">label</a></li>
+      <li><a href="#content">label</a></li>
+    </ul>
+    <h2>Equipe</h2>
+    <ul>
+      <li><a href="#content">Ajuda</a></li>
+      <li id="sobre"><a>Sobre</a></li>
+    </ul>
+  </nav>
+</section>
+<section id="drawer" role="region">
+  <header>
+    <a href="#content"><span class="icon icon-edit">hide sidebar</span></a>
+    <a href="#drawer"><span class="icon icon-edit">show sidebar</span></a>
+    <menu type="toolbar">
+      <button><span class="icon icon-menu">infográficos</span></button>
+    </menu>
+    <form id="search-form" action="#">
+      <input id="address" type="text" placeholder="..." required="required">
+      <button type="reset">Remove text</button>
+    </form>
+  </header>
+  <div role="main">
 
-    <section id="drawer" role="region">
-      <header>
-        <a href="#content"><span class="icon icon-menu">hide sidebar</span></a>
-        <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
-        <menu type="toolbar">
-          <button><span class="icon icon-user">user</span></button>
-        </menu>
-        <form action="#">
-          <input type="text" placeholder="Digite seu endereço..." required="required">
-          <button type="reset">Remove text</button>
-        </form>
-      </header>
-      <div role="main">
-        <div role="toolbar">
-          <ul>
-            <li><button class="action-icon delete">delete</button></li>
-          </ul>
-          <ul>
-            <li><button class="action-icon email-flag">Flag</button></li>
-            <li><button class="action-icon email-markread">Mark read</button></li>
-            <li><button class="action-icon move">Move</button></li>
-          </ul>
-        </div>
 
-      </div>
-    </section>
+    <script src="js/map.js" type="text/javascript" charset="utf-8"></script>
 
-    <!-- Tela da página Sobre -->
+  <div id="map"></div>
+    
+<!-- <div role="toolbar">
+  <ul>
+    <li><button class="action-icon delete">delete</button></li>
+  </ul>
+  <ul>
+    <li><button class="action-icon email-flag">Flag</button></li>
+    <li><button class="action-icon email-markread">Mark read</button></li>
+    <li><button class="action-icon move">Move</button></li>
+  </ul>
+</div>
+	<!-- Tela da página Sobre -->
     <form id="sobre-page" role="dialog" data-type="confirm" class="hidden">
       <section>
         <h1>Sobre</h1>
@@ -135,7 +145,6 @@
         <button id="close-sobre">Back</button>
       </menu>
     </form>
-
     <!-- Tela de Info que scrolla para baixo -->
     <section role="region" id="tela-info" class="hidden">
       <table class="info-container">

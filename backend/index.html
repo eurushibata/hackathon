@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Capture JSON!</title>
+	</head>
+	<body>
+		<script>
+			var xhr = new XMLHttpRequest({mozSystem: true});
+			xhr.open('GET', 'http://192.168.0.159:8081/search/dados_gerais_bairro/bela%20vista');
+			xhr.overrideMimeType('application/json');
+			xhr.responseType="json";
+			xhr.send();
+			xhr.onreadystatechange = function() {
+				if (xhr.status == 200) {
+					console.log(this.response[0].bairro);
+				}
+			};
+			
+			xhr.onerror = function() {
+				console.log('Erro!');
+			};
+		</script>
+	</body>
+</html>
