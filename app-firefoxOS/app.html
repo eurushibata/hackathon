@@ -1,223 +1,284 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<!--         <link rel="stylesheet" type="text/css" href="css/base.css"/>
-        <link href="css/style/headers.css" rel="stylesheet" type="text/css">
-        <link href="css/style_unstable/drawer.css" rel="stylesheet" type="text/css"> -->
+	<head>
+		<meta charset="utf-8">
+		<meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<!--         <link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link href="css/style/headers.css" rel="stylesheet" type="text/css">
+		<link href="css/style_unstable/drawer.css" rel="stylesheet" type="text/css"> -->
 
+		<!-- Building blocks -->
+		<link rel="stylesheet" href="style/action_menu.css">
+		<link rel="stylesheet" href="style/buttons.css">
+		<link rel="stylesheet" href="style/confirm.css">
+		<link rel="stylesheet" href="style/edit_mode.css">
+		<link rel="stylesheet" href="style/headers.css">
+		<link rel="stylesheet" href="style/input_areas.css">
+		<link rel="stylesheet" href="style/status.css">
+		<link rel="stylesheet" href="style/switches.css">
+		<link rel="stylesheet" href="style_unstable/drawer.css">
+		<link rel="stylesheet" href="style_unstable/lists.css">
+		<link rel="stylesheet" href="style_unstable/progress_activity.css">
+		<link rel="stylesheet" href="style_unstable/scrolling.css">
+		<link rel="stylesheet" href="style_unstable/seekbars.css">
+		<link rel="stylesheet" href="style_unstable/tabs.css">
+		<link rel="stylesheet" href="style_unstable/toolbars.css">
 
+		<!-- Icons -->
+		<link rel="stylesheet" href="icons/styles/action_icons.css">
+		<link rel="stylesheet" href="icons/styles/media_icons.css">
+		<link rel="stylesheet" href="icons/styles/comms_icons.css">
+		<link rel="stylesheet" href="icons/styles/settings_icons.css">
 
+		<!-- Transitions -->
+		<link rel="stylesheet" href="transitions.css">
 
-    <!-- Building blocks -->
-    <link rel="stylesheet" href="style/action_menu.css">
-    <link rel="stylesheet" href="style/buttons.css">
-    <link rel="stylesheet" href="style/confirm.css">  
-    <link rel="stylesheet" href="style/edit_mode.css">
-    <link rel="stylesheet" href="style/headers.css">
-    <link rel="stylesheet" href="style/input_areas.css">
-    <link rel="stylesheet" href="style/status.css">
-    <link rel="stylesheet" href="style/switches.css">
-    <link rel="stylesheet" href="style_unstable/drawer.css">
-    <link rel="stylesheet" href="style_unstable/lists.css">
-    <link rel="stylesheet" href="style_unstable/progress_activity.css">
-    <link rel="stylesheet" href="style_unstable/scrolling.css">
-    <link rel="stylesheet" href="style_unstable/seekbars.css">
-    <link rel="stylesheet" href="style_unstable/tabs.css">
-    <link rel="stylesheet" href="style_unstable/toolbars.css">
+		<!-- Util CSS: some extra tricks -->
+		<link rel="stylesheet" href="util.css">
+		<link rel="stylesheet" href="fonts.css">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="icons/styles/action_icons.css">
-    <link rel="stylesheet" href="icons/styles/media_icons.css">
-    <link rel="stylesheet" href="icons/styles/comms_icons.css">
-    <link rel="stylesheet" href="icons/styles/settings_icons.css">
+		<!-- Additional markup to make Building Blocks kind of cross browser -->
+		<link rel="stylesheet" href="cross_browser.css">
 
-    <!-- Transitions -->
-    <link rel="stylesheet" href="transitions.css">
-    
-    <!-- Util CSS: some extra tricks -->
-    <link rel="stylesheet" href="util.css">
-    <link rel="stylesheet" href="fonts.css">
+		<!-- Tela-Info CSS -->
+		<link rel="stylesheet" href="css/tela-info.css">
+		<link rel="stylesheet" href="css/escola-list.css">
+		<link rel="stylesheet" href="css/tipos-servico.css">
 
-    <!-- Additional markup to make Building Blocks kind of cross browser -->
-    <link rel="stylesheet" href="cross_browser.css">
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+		<script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
 
-    <!-- Tela-Info CSS -->
-    <link rel="stylesheet" href="css/tela-info.css">
-    <link rel="stylesheet" href="css/escola-list.css">
-    <link rel="stylesheet" href="css/tipos-servico.css">
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 
-   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
-   <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-   <script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
+		<!-- mapas -->
+		<script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/ee/2.5.3/jsl.js?with=all"></script>
+		<link rel="stylesheet" href="css/map.css">
+		<!-- fim mapa -->
 
-    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-
-      <!-- mapas -->
-      <script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/ee/2.5.3/jsl.js?with=all"></script> 
-      <link rel="stylesheet" href="css/map.css">
-      <!-- fim mapa -->
-
-      <title>SmartCity</title>
+		<title>SmartCity</title>
 		<script>
-      // JavaScript para página sobre
-      var sobreDialog;
-      function requestDeleteConfirmation() {
-          sobreDialog.classList.remove("hidden");
-      }
+						// JavaScript para página sobre
+			var sobreDialog;
+			var escolasDialog;
+			function requestDeleteConfirmation() {
 
-      function closeSobreDialog() {
-          sobreDialog.classList.add("hidden");
-      }
+			$('#drawer').click();
+			sobreDialog.classList.remove("hidden");
+			}
 
-      window.onload = function () {
-          // elements that we're going to reuse in the code
-          sobreDialog = document.getElementById("sobre-page");
+			function closeSobreDialog() {
+			sobreDialog.classList.add("hidden");
+			}
 
-          // All the listeners for the interface buttons and for the input changes
-          
-          document.getElementById("sobre").addEventListener("click", requestDeleteConfirmation);
-          document.getElementById("close-sobre").addEventListener("click", closeSobreDialog);
+			function requestEscola() {
 
-      };
-    </script>
-    </head>
+			$('#drawer').click();
+			escolasDialog.classList.remove("hidden");
+			}
 
-    <body>
-<section data-type="sidebar">
-  <header>
-    <menu type="toolbar">
-      <a href="#content"><span>Done</span></a>
-    </menu>
-    <h1>Menu</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#content">label</a></li>
-      <li><a href="#content">label</a></li>
-      <li><a href="#content">label</a></li>
-      <li><a href="#content">label</a></li>
-    </ul>
-    <h2>Equipe</h2>
-    <ul>
-      <li><a href="#content">Ajuda</a></li>
-      <li id="sobre"><a>Sobre</a></li>
-    </ul>
-  </nav>
-</section>
-<section id="drawer" role="region">
-  <header>
-    <a href="#content"><span class="icon icon-edit">hide sidebar</span></a>
-    <a href="#drawer"><span class="icon icon-edit">show sidebar</span></a>
-    <menu type="toolbar">
-      <button><span class="icon icon-menu">infográficos</span></button>
-    </menu>
-    <form id="search-form" action="#">
-      <input id="address" type="text" placeholder="..." required="required">
-      <button type="reset">Remove text</button>
-    </form>
-  </header>
-  <div role="main">
+			function closeEscolaDialog() {
+			escolasDialog.classList.add("hidden");
+			}
 
+			window.onload = function () {
+			// elements that we're going to reuse in the code
+			sobreDialog = document.getElementById("sobre-page");
+			escolasDialog = document.getElementById("escola-page");
 
-    <script src="js/map.js" type="text/javascript" charset="utf-8"></script>
+			// All the listeners for the interface buttons and for the input changes
 
-  <div id="map"></div>
-    
-<!-- <div role="toolbar">
-  <ul>
-    <li><button class="action-icon delete">delete</button></li>
-  </ul>
-  <ul>
-    <li><button class="action-icon email-flag">Flag</button></li>
-    <li><button class="action-icon email-markread">Mark read</button></li>
-    <li><button class="action-icon move">Move</button></li>
-  </ul>
-</div>
-	<!-- Tela da página Sobre -->
-    <form id="sobre-page" role="dialog" data-type="confirm" class="hidden">
-      <section>
-        <h1>Sobre</h1>
-        <p>lorem ipsum.....</p>
-      </section>
-      <menu>
-        <button id="close-sobre">Back</button>
-      </menu>
-    </form>
-    <!-- Tela de Info que scrolla para baixo -->
-    <section role="region" id="tela-info" class="hidden">
-      <table class="info-container">
-        <tr>
-          <td class="sprite1 border-impar"><div class="icon-info1"></div></td>
-          <td class="sprite2 border-par"><div class="icon-info2"></div></td>
-        </tr>
-        <tr>
-          <td class="sprite3 border-impar"><div class="icon-info3"></div></td>
-          <td class="sprite4 border-par"><div class="icon-info4"></div></td>
-        </tr>
-        <tr>
-          <td class="sprite5 border-impar"><div class="icon-info5"></div></td>
-          <td class="sprite6 border-par"><div class="icon-info6"></div></td>
-        </tr>
-        <tr>
-          <td class="sprite7 border-last"><div class="icon-info7"></div></td>
-          <td class="sprite8"><div class="icon-info8"></div></td>
-        </tr>
-        <td colspan="2" class="sprite9"><div class="icon-info9"></td></div>
+			document.getElementById("sobre").addEventListener("click", requestDeleteConfirmation);
+			document.getElementById("close-sobre").addEventListener("click", closeSobreDialog);
 
-      </table> 
-    </section>
+			document.getElementById("escola-btn").addEventListener("click", requestEscola);
+			document.getElementById("close-escola").addEventListener("click", closeEscolaDialog);
 
-    <!-- Escolas Perfis -->
-    <section role="region" id="escola">
-        <div class="escola-header">
-          <div class="click"></div>
-        </div>
-        <h2 class="selecionadas"></h2>
+			};
+		</script>
+		
+		<script>
+			var xhr = new XMLHttpRequest({mozSystem: true});
+			xhr.open('GET', 'http://192.168.0.159:8081/search/dados_gerais_bairro/bela%20vista');
+			xhr.overrideMimeType('application/json');
+			xhr.responseType="json";
+			xhr.send();
+			xhr.onreadystatechange = function() {
+				if (xhr.status == 200) {
+					console.log(this.response[0].bairro);
+				}
+			};
+			
+			xhr.onerror = function() {
+				console.log('Erro!');
+			};
+		</script>
+		
+		
+	</head>
 
-        <div class="escola-list">
-          <ul>
-            <li class="escola">
-              <div class="escola-perfil">
-                <h1>Nome</h1>
+	<body>
+		<section data-type="sidebar">
+			<header>
+				<menu type="toolbar">
+					<a id="buttonsidebar" href="#content"><span>Done</span></a>
+				</menu>
+				<h1>Menu</h1>
+			</header>
+			<nav>
+				<ul>
+					<li id='escola-btn'>
+						<a>Escolas</a>
+					</li>
+					<li>
+						<a href="#content">label</a>
+					</li>
+					<li>
+						<a href="#content">label</a>
+					</li>
+					<li>
+						<a href="#content">label</a>
+					</li>
+				</ul>
+				<h2>Equipe</h2>
+				<ul>
+					<li>
+						<a href="#content">Ajuda</a>
+					</li>
+					<li id="sobre">
+						<a>Sobre</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<section id="drawer" role="region">
+			<header>
+				<a href="#content"><span class="icon icon-edit">hide sidebar</span></a>
+				<a href="#drawer"><span class="icon icon-edit">show sidebar</span></a>
+				<menu type="toolbar">
+					<button>
+						<span class="icon icon-menu">infográficos</span>
+					</button>
+				</menu>
+				<form id="search-form" action="#">
+					<input id="address" type="text" placeholder="..." required="required">
+					<button type="reset">
+						Remove text
+					</button>
+				</form>
+			</header>
+			<div role="main">
 
-                <div class="hold-persons">
-                  <div class="person-icon"></div>
-                  <div class="qtde-estudantes">300 Estudantes</div>
-                </div>
-              </div>
-              <div class="nota"></div>
-            </li>
-          </ul>
-        </div>
-    </section>
+				<script src="js/map.js" type="text/javascript" charset="utf-8"></script>
 
-    <section role="region" id="tipos-servico">
-      <div class="tipos-header">
-        <div class="click-back"></div>
-      </div>
+				<div id="map"></div>
 
-      <h1>Tipos de Serviço</h1>
+				<div role="toolbar">
+					<ul>
+						<li>
+							<button class="action-icon delete">
+								delete
+							</button>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<button class="action-icon email-flag">
+								Flag
+							</button>
+						</li>
+						<li>
+							<button class="action-icon email-markread">
+								Mark read
+							</button>
+						</li>
+						<li>
+							<button class="action-icon move">
+								Move
+							</button>
+						</li>
+					</ul>
+				</div>
+				<!-- Tela da página Sobre -->
+				<form id="sobre-page" role="dialog" data-type="confirm" class="hidden">
+					<section>
+						<h1>Sobre</h1>
+						<p>
+							lorem ipsum.....
+						</p>
+					</section>
+					<menu>
+						<button id="close-sobre">
+							Back
+						</button>
+					</menu>
+				</form>
+				<!-- Tela de Info que scrolla para baixo -->
+				<section role="region" id="tela-info" class="hidden">
+					<table class="info-container">
+						<tr>
+							<td class="sprite1 border-impar"><div class="icon-info1"></div></td>
+							<td class="sprite2 border-par"><div class="icon-info2"></div></td>
+						</tr>
+						<tr>
+							<td class="sprite3 border-impar"><div class="icon-info3"></div></td>
+							<td class="sprite4 border-par"><div class="icon-info4"></div></td>
+						</tr>
+						<tr>
+							<td class="sprite5 border-impar"><div class="icon-info5"></div></td>
+							<td class="sprite6 border-par"><div class="icon-info6"></div></td>
+						</tr>
+						<tr>
+							<td class="sprite7 border-last"><div class="icon-info7"></div></td>
+							<td class="sprite8"><div class="icon-info8"></div></td>
+						</tr>
+						<td colspan="2" class="sprite9"><div class="icon-info9"></td>
+			</div>
 
-      <div class="todas-notas">
-        <div class="nota1 space"></div>
-        <div class="nota2 space"></div>
-        <div class="nota3 space"></div>
-        <div class="nota4 space"></div>
-        <div class="nota5 space"></div>
-      </div>
+			</table>
+		</section>
 
-      <table>
-        <tr>
-          <td><h3>Atendimento Especializado</h3></td>
-          <td class="checked"></td>
-          <td class="checked"></td>
-          <td class="checked"></td>
-          <td class="checked"></td>
-          <td class="checked"></td>
-        </tr>
-      </table>
-    </section>
-  </body>
+		<!-- Escolas Perfis -->
+		<form id="escola-page" role="dialog" data-type="confirm" class="hidden">
+			<section>
+				<h1>Escola</h1>
+				<p>
+					lorem ipsum.....
+				</p>
+			</section>
+			<menu>
+				<button id="close-escola">
+					Back
+				</button>
+			</menu>
+		</form>
+
+		<section role="region" id="tipos-servico">
+			<div class="tipos-header">
+				<div class="click-back"></div>
+			</div>
+
+			<h1>Tipos de Serviço</h1>
+
+			<div class="todas-notas">
+				<div class="nota1 space"></div>
+				<div class="nota2 space"></div>
+				<div class="nota3 space"></div>
+				<div class="nota4 space"></div>
+				<div class="nota5 space"></div>
+			</div>
+
+			<table>
+				<tr>
+					<td><h3>Atendimento Especializado</h3></td>
+					<td class="checked"></td>
+					<td class="checked"></td>
+					<td class="checked"></td>
+					<td class="checked"></td>
+					<td class="checked"></td>
+				</tr>
+			</table>
+		</section>
+
+	</body>
 <html>
