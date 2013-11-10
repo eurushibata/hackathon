@@ -1,23 +1,23 @@
 <html>
   <head>  
-      <title>Hello World!</title>  
+      <title>Capture JSON!</title>  
   </head>
   <body>
-      Hello World!    
-  </body>
   <script>
-      var manifest_url = "http:/www.sueselbeck.com/blog/example/1/manifest.webapp";
-  </script>
-  <script>
+      function parseJsoan(data) {
+        
+      }
         var xhr = new XMLHttpRequest({ mozSystem: true });
+        xhr.open("GET","http://127.0.0.1:8081/search/dados_gerais_bairro/bela%20vista");
+        xhr.overrideMimeType('text/plain; charset=utf-8');
         xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.open("GET","http://127.0.0.1:8081/getallitems.json");
         xhr.responseType="json";
         xhr.send();
         xhr.onload = function() {
             if (xhr.status == 200) {
-                console.log(this.response);
-                alert(xhr.responseText);
+                console.log(JSON.parse(this.response));
+                obj = this.response;
+                alert(obj);
             }
         };
         xhr.onerror = function() {
@@ -25,8 +25,5 @@
             console.log("Erro!");
         }
     </script>
-  <input type="button" id="button" value="Install!" onclick="navigator.mozApps.install(manifest_url); return false;">
   </body>
-
 </html>
-

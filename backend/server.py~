@@ -47,4 +47,4 @@ def get_sistema_viario(bairro):
         return (get_data('sistema_viario', bairro.upper()))
     
     
-run(host='0.0.0.0', port=8081)
+run(host='127.0.0.1', port=8081)
