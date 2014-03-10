@@ -1,0 +1,25 @@
+html {
+	overflow-y:hidden;
+	overflow-x:hidden;
+}
+
+body {
+	background-color: #C5C5C5;
+}
+
+div.homescreen {
+	height: 480px;
+	width: 320px;
+    position:absolute;
+	background: url(../img/homescreen.png) no-repeat left top;
+	top:50%;
+    margin:-240px 0 0 -160px;
+    left: 50%;
+}
+
+progress.pack-activity {
+	position: absolute;
+	bottom: 0;
+	left:-1px;
+	border-radius: 0 !important;
+}

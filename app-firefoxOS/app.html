@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+
+
+
+
+  <!-- Building blocks -->
+  <link rel="stylesheet" href="style/action_menu.css">
+  <link rel="stylesheet" href="style/buttons.css">
+  <link rel="stylesheet" href="style/confirm.css">
+  <link rel="stylesheet" href="style/edit_mode.css">
+  <link rel="stylesheet" href="style/headers.css">
+  <link rel="stylesheet" href="style/input_areas.css">
+  <link rel="stylesheet" href="style/status.css">
+  <link rel="stylesheet" href="style/switches.css">
+  <link rel="stylesheet" href="style_unstable/drawer.css">
+  <link rel="stylesheet" href="style_unstable/lists.css">
+  <link rel="stylesheet" href="style_unstable/progress_activity.css">
+  <link rel="stylesheet" href="style_unstable/scrolling.css">
+  <link rel="stylesheet" href="style_unstable/seekbars.css">
+  <link rel="stylesheet" href="style_unstable/tabs.css">
+  <link rel="stylesheet" href="style_unstable/toolbars.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="icons/styles/action_icons.css">
+  <link rel="stylesheet" href="icons/styles/media_icons.css">
+  <link rel="stylesheet" href="icons/styles/comms_icons.css">
+  <link rel="stylesheet" href="icons/styles/settings_icons.css">
+
+  <!-- Transitions -->
+  <link rel="stylesheet" href="transitions.css">
+  
+  <!-- Util CSS: some extra tricks -->
+  <link rel="stylesheet" href="util.css">
+  <link rel="stylesheet" href="fonts.css">
+
+  <!-- Additional markup to make Building Blocks kind of cross browser -->
+  <link rel="stylesheet" href="cross_browser.css">
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+   <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+   <script src="http://labs.easyblog.it/maps/leaflet-search/leaflet-search.js"></script>
+   <link rel="stylesheet" href="http://labs.easyblog.it/maps/leaflet-search/leaflet-search.css" />
+   <script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+
+      <!-- mapas -->
+      <script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/ee/2.5.3/jsl.js?with=all"></script> 
+      <link rel="stylesheet" href="css/map.css">
+      <!-- fim mapa -->
+
+      <title>SmartCity</title>
+    </head>
+
+    <body>
+<section data-type="sidebar">
+  <header>
+    <menu type="toolbar">
+      <a href="#content"><span>Done</span></a>
+    </menu>
+    <h1>Menu</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#content">label</a></li>
+      <li><a href="#content">label</a></li>
+      <li><a href="#content">label</a></li>
+      <li><a href="#content">label</a></li>
+    </ul>
+    <h2>Equipe</h2>
+    <ul>
+      <li><a href="#content">Ajuda</a></li>
+      <li><a href="#content">Sobre</a></li>
+    </ul>
+  </nav>
+</section>
+<section id="drawer" role="region">
+  <header>
+    <a href="#content"><span class="icon icon-edit">hide sidebar</span></a>
+    <a href="#drawer"><span class="icon icon-edit">show sidebar</span></a>
+    <menu type="toolbar">
+      <button><span class="icon icon-menu">infográficos</span></button>
+    </menu>
+    <form id="search-form" action="#">
+      <input id="address" type="text" placeholder="Pesquisar..." required="required">
+      <div class="search-tooltip" style="display: none;"></div>
+      <button type="reset">Remove text</button>
+    </form>
+  </header>
+  <div role="main">
+
+
+    <script src="js/map.js" type="text/javascript" charset="utf-8"></script>
+
+  <div id="map"></div>
+    
+<!-- <div role="toolbar">
+  <ul>
+    <li><button class="action-icon delete">delete</button></li>
+  </ul>
+  <ul>
+    <li><button class="action-icon email-flag">Flag</button></li>
+    <li><button class="action-icon email-markread">Mark read</button></li>
+    <li><button class="action-icon move">Move</button></li>
+  </ul>
+</div>
+
+  </div>
+</section>
+
+
+     -->
+
+
+
+    </body>
+<html>
+=======
+	<head>
+		<meta charset="utf-8">
+		<meta name=viewport content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<!--         <link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link href="css/style/headers.css" rel="stylesheet" type="text/css">
+		<link href="css/style_unstable/drawer.css" rel="stylesheet" type="text/css"> -->
+
+		<!-- Building blocks -->
+		<link rel="stylesheet" href="style/action_menu.css">
+		<link rel="stylesheet" href="style/buttons.css">
+		<link rel="stylesheet" href="style/confirm.css">
+		<link rel="stylesheet" href="style/edit_mode.css">
+		<link rel="stylesheet" href="style/headers.css">
+		<link rel="stylesheet" href="style/input_areas.css">
+		<link rel="stylesheet" href="style/status.css">
+		<link rel="stylesheet" href="style/switches.css">
+		<link rel="stylesheet" href="style_unstable/drawer.css">
+		<link rel="stylesheet" href="style_unstable/lists.css">
+		<link rel="stylesheet" href="style_unstable/progress_activity.css">
+		<link rel="stylesheet" href="style_unstable/scrolling.css">
+		<link rel="stylesheet" href="style_unstable/seekbars.css">
+		<link rel="stylesheet" href="style_unstable/tabs.css">
+		<link rel="stylesheet" href="style_unstable/toolbars.css">
+
+		<!-- Icons -->
+		s
+		<link rel="stylesheet" href="icons/styles/action_icons.css">
+		<link rel="stylesheet" href="icons/styles/media_icons.css">
+		<link rel="stylesheet" href="icons/styles/comms_icons.css">
+		<link rel="stylesheet" href="icons/styles/settings_icons.css">
+
+		<!-- Transitions -->
+		<link rel="stylesheet" href="transitions.css">
+
+		<!-- Util CSS: some extra tricks -->
+		<link rel="stylesheet" href="util.css">
+		<link rel="stylesheet" href="fonts.css">
+
+		<!-- Additional markup to make Building Blocks kind of cross browser -->
+		<link rel="stylesheet" href="cross_browser.css">
+
+		<!-- Tela-Info CSS -->
+		<link rel="stylesheet" href="css/tela-info.css">
+		<link rel="stylesheet" href="css/escola-list.css">
+		<link rel="stylesheet" href="css/tipos-servico.css">
+
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+		<script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
+
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&sensor=false"></script>
+
+		<!-- mapas -->
+		<script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/ee/2.5.3/jsl.js?with=all"></script>
+		<link rel="stylesheet" href="css/map.css">
+		<!-- fim mapa -->
+
+		<title>SmartCity</title>
+		<script>
+			// JavaScript para página sobre
+			var sobreDialog;
+			var escolasDialog;
+			var bairroDialog;
+			var interesseDialog;
+			function requestDeleteConfirmation() {
+
+				$('#drawer').click();
+				sobreDialog.classList.remove("hidden");
+			}
+
+			function closeSobreDialog() {
+				sobreDialog.classList.add("hidden");
+			}
+
+			function requestEscola() {
+
+				$('#drawer').click();
+				escolasDialog.classList.remove("hidden");
+			}
+
+			function closeEscolaDialog() {
+				escolasDialog.classList.add("hidden");
+			}
+
+			function requestBairro() {
+
+				$('#drawer').click();
+				bairroDialog.classList.remove("hidden");
+			}
+
+			function closeBairroDialog() {
+				bairroDialog.classList.add("hidden");
+			}
+
+			function requestInteresse() {
+
+				$('#drawer').click();
+				interesseDialog.classList.remove("hidden");
+			}
+
+			function closeInteresseDialog() {
+				interesseDialog.classList.add("hidden");
+			}
+
+
+			window.onload = function() {
+				// elements that we're going to reuse in the code
+				sobreDialog = document.getElementById("sobre-page");
+				escolasDialog = document.getElementById("escola-page");
+				bairroDialog = document.getElementById("bairro-page");
+				interesseDialog = document.getElementById("interesse-page");
+
+				// All the listeners for the interface buttons and for the input changes
+
+				document.getElementById("sobre").addEventListener("click", requestDeleteConfirmation);
+				document.getElementById("close-sobre").addEventListener("click", closeSobreDialog);
+
+				document.getElementById("escola-btn").addEventListener("click", requestEscola);
+				document.getElementById("close-escola").addEventListener("click", closeEscolaDialog);
+
+				document.getElementById("bairro-btn").addEventListener("click", requestBairro);
+				document.getElementById("close-bairro").addEventListener("click", closeBairroDialog);
+
+				document.getElementById("interesse-btn").addEventListener("click", requestInteresse);
+				document.getElementById("close-interesse").addEventListener("click", closeInteresseDialog);
+
+			};
+		</script>
+
+		<script>
+			function fill_bairro(bairro) {
+				var xhr = new XMLHttpRequest({
+					mozSystem : true
+				});
+
+				// bairro = http://cep.correiocontrol.com.br/02245010.json
+
+				xhr.open('GET', 'http://slave1.hyadesinc.com:8081/search/dados_gerais_bairro/' + bairro);
+				xhr.overrideMimeType('application/json');
+				xhr.responseType = "json";
+				xhr.send();
+				xhr.onreadystatechange = function() {
+					if (xhr.status == 200) {
+						console.log(this.response[0].bairro);
+						$('#bairro-list').text('');
+						$('#bairro-list').append('<ul>');
+						$('#bairro-list').append('<li>Bairro: ' + this.response[0].bairro + ' (' + this.response[0].municipio + ')</li>');
+						$('#bairro-list').append('<li>Area Total: ' + this.response[0].area_total + 'km</li>');
+						$('#bairro-list').append('<li>Domicilios: ' + this.response[0].num_familias + '</li>');
+						$('#bairro-list').append('<li>Populacao: ' + this.response[0].populacao + ' (' + this.response[0].num_familias + ' familias)</li>');
+						$('#bairro-list').append('<li>Matriculas escolares: ' + this.response[0].num_matriculas + '</li>');
+						$('#bairro-list').append('<li>Empregos: ' + this.response[0].num_empregos + '</li>');
+
+						$('#bairro-list').append('</ul>');
+					}
+				};
+
+				xhr.onerror = function() {
+					console.log('Erro!');
+				};
+			};
+			fill_bairro('bela vista');
+        </script>
+
+         <script>
+            function fill_escola(nome) {
+            var xhr = new XMLHttpRequest({
+                mozSystem : true
+            });
+            
+            // bairro = http://cep.correiocontrol.com.br/02245010.json
+            
+            xhr.open('GET', 'http://slave1.hyadesinc.com:8081/search/qedu/' + nome);
+            xhr.overrideMimeType('application/json');
+            xhr.responseType = "json";
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if (xhr.status == 200) {
+                    console.log(this.response.schools[0]);
+                    $('#escola-list').text('');
+                    $('#escola-list').append('<ul>');
+                    $('#escola-list').append('<li>Nome: ' + this.response.schools[0].name + '</li>');
+                    $('#escola-list').append('<li>Região: ' + this.response.schools[0].subtitle + '</li>');
+                    $('#escola-list').append('</ul>');
+                }
+            };
+
+            xhr.onerror = function() {
+                console.log('Erro!');
+            };
+            };
+            //fill_escola('sao_paulo');
+        </script>
+
+
+
+		<script>
+			function fill_interesse(bairro, index) {
+				var xhr = new XMLHttpRequest({
+					mozSystem : true
+				});
+
+				// bairro = http://cep.correiocontrol.com.br/02245010.json
+
+				xhr.open('GET', 'http://slave1.hyadesinc.com:8081/search/ponto_interesse/' + bairro);
+				xhr.overrideMimeType('application/json');
+				xhr.responseType = "json";
+				xhr.send();
+				xhr.onreadystatechange = function() {
+					console.log(this);
+					if (xhr.status == 200) {
+						$('#interesse-list').text('Pontos de interesse em ' + bairro);
+						$('#interesse-list').append('<ul>');
+						for (var index = 0; index < 10; index++) {
+							$('#interesse-list').append('<li>Categoria: ' + this.response[index].subcategoria + '</li>');
+							$('#interesse-list').append('<li>Nome: ' + this.response[index].nome + '</li>');
+							$('#interesse-list').append('<li>Endereco: ' + this.response[index].endereco + '</li>');
+							$('#interesse-list').append('<br>');
+						}
+						$('#interesse-list').append('</ul>');
+					}
+				};
+
+				xhr.onerror = function() {
+					console.log(xhr);
+				};
+			};
+			fill_interesse('bela vista', 0);
+		</script>
+
+	</head>
+
+	<body>
+		<section data-type="sidebar">
+			<header>
+				<menu type="toolbar">
+					<a id="buttonsidebar" href="#content"><span>Done</span></a>
+				</menu>
+				<h1>Menu</h1>
+			</header>
+			<nav>
+				<ul>
+					<li>
+						<a id='bairro-btn'>Bairro</a>
+					</li>
+					<li id='escola-btn'>
+						<a>Escolas</a>
+					</li>
+
+					<li>
+						<a id='interesse-btn'>Pontos de Interesse</a>
+					</li>
+
+				</ul>
+				<h2>Equipe</h2>
+				<ul>
+					<li>
+						<a href="#content">Ajuda</a>
+					</li>
+					<li id="sobre">
+						<a>Sobre</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<section id="drawer" role="region">
+			<header>
+				<a href="#content"><span class="icon icon-edit">hide sidebar</span></a>
+				<a href="#drawer"><span class="icon icon-edit">show sidebar</span></a>
+				<menu type="toolbar">
+					<button>
+						<span class="icon icon-menu">infográficos</span>
+					</button>
+				</menu>
+				<form id="search-form" action="#">
+					<input id="address" type="text" placeholder="..." required="required">
+					<button type="reset">
+						Remove text
+					</button>
+				</form>
+			</header>
+			<div role="main">
+
+				<script src="js/map.js" type="text/javascript" charset="utf-8"></script>
+
+				<div id="map"></div>
+
+				<div role="toolbar">
+					<ul>
+						<li>
+							<button class="action-icon delete">
+								delete
+							</button>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<button class="action-icon email-flag">
+								Flag
+							</button>
+						</li>
+						<li>
+							<button class="action-icon email-markread">
+								Mark read
+							</button>
+						</li>
+						<li>
+							<button class="action-icon move">
+								Move
+							</button>
+						</li>
+					</ul>
+				</div>
+				<!-- Tela da página Sobre -->
+				<form id="sobre-page" role="dialog" data-type="confirm" class="hidden">
+					<section>
+						<h1>Sobre</h1>
+						<p>
+							USPCidades - 1o Hackathon
+						</p>
+					</section>
+					<menu>
+						<button id="close-sobre">
+							Back
+						</button>
+					</menu>
+				</form>
+				<!-- Tela de Info que scrolla para baixo -->
+				<section role="region" id="tela-info" class="hidden">
+					<table class="info-container">
+						<tr>
+							<td class="sprite1 border-impar"><div class="icon-info1"></div></td>
+							<td class="sprite2 border-par"><div class="icon-info2"></div></td>
+						</tr>
+						<tr>
+							<td class="sprite3 border-impar"><div class="icon-info3"></div></td>
+							<td class="sprite4 border-par"><div class="icon-info4"></div></td>
+						</tr>
+						<tr>
+							<td class="sprite5 border-impar"><div class="icon-info5"></div></td>
+							<td class="sprite6 border-par"><div class="icon-info6"></div></td>
+						</tr>
+						<tr>
+							<td class="sprite7 border-last"><div class="icon-info7"></div></td>
+							<td class="sprite8"><div class="icon-info8"></div></td>
+						</tr>
+						<td colspan="2" class="sprite9"><div class="icon-info9"></div></td>
+					</table>
+
+				</section>
+
+				<!-- Bairro Ponto Interesse -->
+				<form id="interesse-page" role="dialog" data-type="confirm" class="hidden">
+					<section>
+						<h1>Pontos de Interesse</h1>
+						<p id='interesse-list'>
+							Dados não disponiveis
+						</p>
+					</section>
+					<menu>
+						<button id="close-interesse">
+							Back
+						</button>
+					</menu>
+				</form>
+
+				<!-- Bairro Dado Geral -->
+				<form id="bairro-page" role="dialog" data-type="confirm" class="hidden">
+					<section>
+						<h1>Bairro</h1>
+						<input type=hidden id='cep' value=''>
+						<p id='bairro-list'>
+							Dados não disponiveis
+						</p>
+					</section>
+					<menu>
+						<button id="close-bairro">
+							Back
+						</button>
+					</menu>
+				</form>
+
+				<!-- Escolas Perfis -->
+				<form id="escola-page" role="dialog" data-type="confirm" class="hidden">
+					<section>
+						<h1>Escola</h1>
+						<p id='escola-list'>
+							<img src='/images/resources/escola.png' style='width: 99%;'>
+						</p>
+					</section>
+					<menu>
+						<button id="close-escola">
+							Back
+						</button>
+					</menu>
+				</form>
+
+				<section role="region" id="tipos-servico">
+					<div class="tipos-header">
+						<div class="click-back"></div>
+					</div>
+
+					<h1>Tipos de Serviço</h1>
+
+					<div class="todas-notas">
+						<div class="nota1 space"></div>
+						<div class="nota2 space"></div>
+						<div class="nota3 space"></div>
+						<div class="nota4 space"></div>
+						<div class="nota5 space"></div>
+					</div>
+
+					<table>
+						<tr>
+							<td><h3>Atendimento Especializado</h3></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+							<td class="checked"></td>
+						</tr>
+					</table>
+				</section>
+
+	</body>
+<html>

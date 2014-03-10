@@ -1,0 +1,38 @@
+{
+    "version": "0.1",
+    "name": "SmartCity",
+    "description": "Your new awesome Open Web App",
+    "launch_path": "/index.html",
+    "icons": {
+        "60": "/img/icone.png",
+        "90": "/img/logo90.png",
+        "120": "/img/logo120.png",
+        "128": "/img/logo128.png"
+    },
+    "developer": {
+        "name": "Emerson Urushibata",
+        "url": "http://github.com/eurushibata"
+    },
+    "installs_allowed_from": [
+        "*"
+    ],
+    "locales": {
+        "pt_BR": {
+            "name": "SmartCity",
+            "description": "Segundo lugar na premiacao USPCidades"
+        },
+        "en": {
+            "name": "SmartCity",
+            "description": "USPCidades Award Winner - Second Place"
+        }
+    },
+    "default_locale": "pt_BR",
+    "permissions": {
+        "desktop-notification": {
+            "description": "To show notifications"
+        },
+        "geolocation": {
+            "description": "Marking out user location"
+        }
+    }
+}
